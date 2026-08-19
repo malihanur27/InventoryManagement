@@ -9,15 +9,12 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-// Product API routes
 app.use("/api/products", productRoutes);
 
-// Connect to MongoDB
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
