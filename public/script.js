@@ -19,7 +19,15 @@ async function loadProducts() {
             <td>${product.name}</td>
             <td>${product.category}</td>
             <td>${product.price}</td>
-            <td>${product.quantity}</td>
+            <td>
+                    ${product.quantity}
+
+                    ${
+                        product.quantity <= 5
+                            ? '<span class="badge bg-danger ms-2">Low Stock</span>'
+                            : ''
+                    }
+            </td>
             <td>
                 <button
                     class="btn btn-warning btn-sm"
